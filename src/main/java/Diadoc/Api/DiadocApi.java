@@ -801,6 +801,10 @@ public class DiadocApi {
         return SignatureRejectionInfoProtos.SignatureRejectionInfo.parseFrom(PerformPostHttpRequest("/ParseSignatureRejectionXml", null, xmlContent));
     }
 
+    public InvoiceCorrectionRequestInfoProtos.InvoiceCorrectionRequestInfo ParseInvoiceCorrectionRequestXml(byte[] xmlContent) throws IOException {
+        return InvoiceCorrectionRequestInfoProtos.InvoiceCorrectionRequestInfo.parseFrom(PerformPostHttpRequest("/ParseInvoiceCorrectionRequestXml", null, xmlContent));
+    }
+
     public InvoiceCorrectionRequestInfoProtos.InvoiceCorrectionRequestInfo GetInvoiceCorrectionRequestInfo(String boxId, String messageId, String entityId) throws IOException {
         if (boxId == null)
             throw new NullPointerException("boxId");
